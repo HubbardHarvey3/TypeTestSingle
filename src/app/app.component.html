@@ -4,7 +4,7 @@
 
   <div id="paneOneTwo">
     <mat-card  id="paneOne">
-      <h4>{{sampleText}}</h4>
+      <h2>{{sampleText}}</h2>
     </mat-card>
     
     <mat-card id="paneTwo">
@@ -32,7 +32,7 @@
     </h3>
     
     <h3 >WPM 
-      <h4 *ngIf="wpm !== infinity">{{wpm}}</h4>
+      <h4 *ngIf="isTypingDone">{{wpm}}</h4>
     </h3>
   </mat-card>
 </div>

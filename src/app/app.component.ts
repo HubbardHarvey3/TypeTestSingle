@@ -40,14 +40,14 @@ export class AppComponent {
       this.resultTextCharNums = this.resultText.length
     });
     this.sampleTextCharNums = this.sampleText.length
-    this.intervalLengthCheck();
+    this.intervalStatusCheck();
     this.intervalTimeCheck();
   }
 
 
 
   // Methods
-  intervalLengthCheck() {
+  intervalStatusCheck() {
     setInterval(() => {
       this.textLengthTest()
       this.calculateWordsTyped();
@@ -65,16 +65,12 @@ export class AppComponent {
       this.calculateWPM()
     }, 1000)
   }
-  // Pane 1
-
-
   // Pane 2
   textLengthTest() {
     if (this.sampleTextCharNums <= this.resultTextCharNums) {
       this.isTypingDone = true
     }
   }
-
   // Pane 3
   startTime() {
     this.isTimer = true
@@ -88,7 +84,7 @@ export class AppComponent {
     this.timeInSeconds = (this.minutes * 60) + this.seconds
   }
   calculateWordsTyped() {
-    if (this.resultText !== "") {
+    if (this.resultText !== "" && !this.isTypingDone) {
       let resultTextArray: Array<string>;
       resultTextArray = this.resultText.split(' ')
       this.resultWordCount = resultTextArray.length
