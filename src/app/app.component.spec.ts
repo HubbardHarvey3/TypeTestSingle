@@ -23,11 +23,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const bool = fixture.componentInstance.isTimer;
     expect(bool).toBeFalse
-  })
+  });
+
   it('Typing Done boolean should start false', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const bool = fixture.componentInstance.isTypingDone;
     expect(bool).toBeFalse
-  })
+  });
 
 });

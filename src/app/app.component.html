@@ -1,32 +1,38 @@
 <h1>Type Test</h1>
 
 <div id="mainDiv">
-<div id="paneOneTwo">
-  <mat-card  id="paneOne">
-    <h4>{{sampleText}}</h4>
-  </mat-card>
-  
-  <mat-card id="paneTwo">
-    <form [formGroup]="typeInputForm" >
-      <mat-form-field class="example-full-width">
-        <textarea 
-        matInput 
-        type="text" 
-        formControlName="typeInputField" 
-        placeholder="Start Typing to begin"
-        (keydown)="startTime()"
-      ></textarea>
-      </mat-form-field>
-    </form>
-  </mat-card>
+
+  <div id="paneOneTwo">
+    <mat-card  id="paneOne">
+      <h4>{{sampleText}}</h4>
+    </mat-card>
+    
+    <mat-card id="paneTwo">
+      <form [formGroup]="typeInputForm" >
+        <mat-form-field class="example-full-width">
+          <textarea 
+          matInput 
+          type="text" 
+          formControlName="typeInputField" 
+          placeholder="Start Typing to begin"
+          (keydown)="startTime()"
+        ></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card>
 </div>
   <!-- <h4>{{resultText}}</h4> -->  
 
   <mat-card id="paneThree">
-    <h4>Start typing sample text to begin test.</h4>
+    <h2>Start typing sample text to begin test.</h2>
     <h4>Timer: {{minutes}} Minutes : {{seconds}} Seconds</h4>
-    <h4 >WPM 
+    <h3>
+      Words Typed
+      <h4>{{resultWordCount}}</h4>
+    </h3>
+    
+    <h3 >WPM 
       <h4 *ngIf="wpm !== infinity">{{wpm}}</h4>
-    </h4>
+    </h3>
   </mat-card>
 </div>

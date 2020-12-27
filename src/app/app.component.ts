@@ -15,6 +15,7 @@ export class AppComponent {
   // Pane 2
   typeInputForm: FormGroup;
   resultText: string = "";
+  resultWordCount: number = 0;
   resultTextCharNums: number = 0;
   isTimer: boolean = false;
   isTypingDone: boolean = false;
@@ -49,6 +50,7 @@ export class AppComponent {
   intervalLengthCheck() {
     setInterval(() => {
       this.textLengthTest()
+      this.calculateWordsTyped();
     }, 500)
   }
   intervalTimeCheck() {
@@ -85,4 +87,12 @@ export class AppComponent {
   calculateTimeinSeconds() {
     this.timeInSeconds = (this.minutes * 60) + this.seconds
   }
+  calculateWordsTyped() {
+    if (this.resultText !== "") {
+      let resultTextArray: Array<string>;
+      resultTextArray = this.resultText.split(' ')
+      this.resultWordCount = resultTextArray.length
+    }
+  }
+
 }
