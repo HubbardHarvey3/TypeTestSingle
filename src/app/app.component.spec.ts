@@ -1,12 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+
       declarations: [
         AppComponent
       ],
+      providers: [FormBuilder]
     }).compileComponents();
   }));
 
@@ -16,16 +19,15 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'TypeTestSingle'`, () => {
+  it('Timer should start off', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('TypeTestSingle');
-  });
+    const bool = fixture.componentInstance.isTimer;
+    expect(bool).toBeFalse
+  })
+  it('Typing Done boolean should start false', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const bool = fixture.componentInstance.isTypingDone;
+    expect(bool).toBeFalse
+  })
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('TypeTestSingle app is running!');
-  });
 });
