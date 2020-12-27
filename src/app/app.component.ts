@@ -39,6 +39,7 @@ export class AppComponent {
       this.resultText = this.typeInputForm.value.typeInputField
       this.resultTextCharNums = this.resultText.length
     });
+    // Capture the length of the sample text
     this.sampleTextCharNums = this.sampleText.length
     this.intervalStatusCheck();
     this.intervalTimeCheck();
